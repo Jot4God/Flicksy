@@ -1,3 +1,3 @@
 # Flicksy
 
-João Reis & Francisco Castro
+João Reis & Francisco Castro lda
