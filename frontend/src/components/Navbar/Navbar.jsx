@@ -1,4 +1,5 @@
 import './Navbar.css';
+import { IconHome } from '@tabler/icons-react';
 
 function Navbar() {
   return (
@@ -6,7 +7,10 @@ function Navbar() {
       <h2 className="navbar-logo">Flicksy</h2>
 
       <div className="navbar-links">
-        <a href="#">Home</a>
+        <div className="navbar-item">
+          <IconHome stroke={2} />
+          <a href="#">Home</a>
+        </div>
         <a href="#popular">Movies</a>
         <a href="#">Search</a>
       </div>
