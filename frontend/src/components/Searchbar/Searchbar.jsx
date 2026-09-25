@@ -1,4 +1,5 @@
 import './Searchbar.css';
+import { IconSearch } from '@tabler/icons-react';
 
 function Searchbar() {
     return (
@@ -8,7 +9,7 @@ function Searchbar() {
                 placeholder="Search for movies, series..."
             />
 
-            <button>🔍</button>
+            <button><IconSearch stroke={2} /></button>
         </div>
     );
 }
