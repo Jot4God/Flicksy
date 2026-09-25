@@ -1,4 +1,5 @@
 import Navbar from '../../components/Navbar/Navbar.jsx';
+import Searchbar from '../../components/Searchbar/Searchbar.jsx';
 import MovieGrid from '../../components/MovieGrid/MovieGrid.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
 import './Home.css';
@@ -34,6 +35,7 @@ function Home() {
   return (
     <>
       <Navbar />
+      <Searchbar />
 
       <main className="home">
         <section className="hero">
