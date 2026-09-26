@@ -1,19 +1,23 @@
 .search-bar {
     position: fixed;
-    top: 24px;
-    left: 250px;
+    top: 16px;
+    left: 280px;
 
     z-index: 20;
 
     display: flex;
     align-items: center;
 
-    background: rgba(24, 28, 37, 0.96);
+    background:
+    linear-gradient(
+      180deg,
+      #0d1d30 100%
+    );
 
-    border: 1px solid #2c2c2c;
+    border: 1px solid #162235;
     border-radius: 12px;
 
-    padding: 8px 12px;
+    padding: 4px 8px;
 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }

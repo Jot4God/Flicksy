@@ -2,6 +2,12 @@
   margin-top: 60px;
   padding: 25px;
   text-align: center;
-  background-color:rgba(24, 28, 37, 0.96);
+    background:
+    linear-gradient(
+      180deg,
+      #07111d 0%,
+      #08121f 100%
+    );
+
   color: #888;;
 }

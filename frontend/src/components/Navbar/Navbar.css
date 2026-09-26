@@ -32,7 +32,6 @@
 .navbar-logo-container {
   display: flex;
   align-items: center;
-
   gap: 12px;
 
   padding: 0 8px;
@@ -41,7 +40,7 @@
 }
 
 
-.navbar-symbol {
+.navbar-logo-image {
   width: 28px;
   height: 28px;
 
@@ -53,7 +52,6 @@
 
   font-size: 27px;
 
-  transform: rotate(45deg);
 }
 
 
