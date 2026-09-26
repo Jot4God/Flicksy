@@ -14,12 +14,7 @@
 
   box-sizing: border-box;
 
-  background:
-    linear-gradient(
-      180deg,
-      #07111d 0%,
-      #08121f 100%
-    );
+  background: linear-gradient(180deg, #07111d 0%, #08121f 100%);
 
   border-right: 1px solid #162235;
 
@@ -27,7 +22,6 @@
 
   z-index: 100;
 }
-
 
 .navbar-logo-container {
   display: flex;
@@ -37,8 +31,16 @@
   padding: 0 8px;
 
   margin-bottom: 28px;
-}
 
+  background: transparent;
+  border: none;
+
+  color: white;
+
+  cursor: pointer;
+
+  width: fit-content;
+}
 
 .navbar-logo-image {
   width: 28px;
@@ -51,9 +53,7 @@
   color: #7667ff;
 
   font-size: 27px;
-
 }
-
 
 .navbar-logo {
   margin: 0;
@@ -65,6 +65,9 @@
   color: #f3f5fb;
 }
 
+.navbar-logo-container:hover {
+  opacity: 0.85;
+}
 
 .navbar-main-menu,
 .navbar-library {
@@ -73,7 +76,6 @@
 
   gap: 7px;
 }
-
 
 .navbar-item {
   width: 100%;
@@ -107,13 +109,11 @@
     transform 0.2s ease;
 }
 
-
 .navbar-item svg {
   flex-shrink: 0;
 
   color: #aebde0;
 }
-
 
 .navbar-item:hover {
   background-color: #111f34;
@@ -123,31 +123,21 @@
   transform: translateX(2px);
 }
 
-
 .navbar-item:hover svg {
   color: white;
 }
 
-
 .navbar-item.active {
-  background:
-    linear-gradient(
-      90deg,
-      #3733a7,
-      #282a78
-    );
+  background: linear-gradient(90deg, #3733a7, #282a78);
 
   color: white;
 
-  box-shadow:
-    0 4px 15px rgba(72, 64, 190, 0.18);
+  box-shadow: 0 4px 15px rgba(72, 64, 190, 0.18);
 }
-
 
 .navbar-item.active svg {
   color: #e5e8ff;
 }
-
 
 .navbar-divider {
   height: 1px;
@@ -158,7 +148,6 @@
 
   background-color: #1b293d;
 }
-
 
 .navbar-section-title {
   margin: 0 0 10px 10px;
@@ -171,7 +160,6 @@
 
   font-weight: 500;
 }
-
 
 .navbar-count {
   margin-left: auto;
@@ -193,7 +181,6 @@
   line-height: 1;
 }
 
-
 .navbar-bottom {
   margin-top: auto;
 
@@ -202,7 +189,6 @@
 
   gap: 20px;
 }
-
 
 .invite-card {
   margin: 0 4px;
@@ -213,17 +199,10 @@
 
   border: 1px solid #253354;
 
-  background:
-    linear-gradient(
-      145deg,
-      #101d3d,
-      #0e1830
-    );
+  background: linear-gradient(145deg, #101d3d, #0e1830);
 
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
-
 
 .invite-card-top {
   display: flex;
@@ -232,7 +211,6 @@
 
   margin-bottom: 10px;
 }
-
 
 .invite-icon {
   width: 32px;
@@ -244,21 +222,14 @@
 
   border-radius: 8px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #5b5deb,
-      #7267ff
-    );
+  background: linear-gradient(135deg, #5b5deb, #7267ff);
 
   color: white;
 }
 
-
 .invite-arrow {
   color: #b4c0d9;
 }
-
 
 .invite-card h3 {
   margin: 0 0 5px 0;
@@ -270,7 +241,6 @@
   color: #f2f4fa;
 }
 
-
 .invite-card p {
   margin: 0;
 
@@ -280,7 +250,6 @@
 
   line-height: 1.45;
 }
-
 
 .settings-item {
   margin-bottom: 4px;
