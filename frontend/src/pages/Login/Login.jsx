@@ -97,7 +97,7 @@ function Login() {
                         ? 'Create your Flicksy account'
                         : 'Sign in to your Flicksy account'}
                 </p>
-
+                
                 <form onSubmit={handleSubmit}>
 
                     {isRegister && (

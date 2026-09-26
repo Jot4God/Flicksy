@@ -164,12 +164,9 @@
 ========================= */
 
 .profile-stats {
-  width: 100%;
-
+  width: 50%;
   display: grid;
-
   grid-template-columns: repeat(5, 1fr);
-
   margin-bottom: 30px;
 }
 
