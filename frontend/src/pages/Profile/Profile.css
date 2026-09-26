@@ -1,0 +1,490 @@
+.profile {
+  margin-left: 240px;
+
+  min-height: 100vh;
+
+  padding:
+    95px
+    55px
+    60px
+    55px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      180deg,
+      #07111d 0%,
+      #08121f 100%
+    );
+
+  color: white;
+}
+
+
+/* =========================
+   PROFILE HEADER
+========================= */
+
+.profile-header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 35px;
+}
+
+
+.profile-user {
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+}
+
+
+.profile-avatar {
+  width: 110px;
+  height: 110px;
+
+  flex-shrink: 0;
+
+  padding: 3px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6d5dfc,
+      #2b3a91
+    );
+}
+
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  background-color: #101b2a;
+
+  border: 3px solid #08121f;
+
+  box-sizing: border-box;
+}
+
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.profile-info h1 {
+  margin: 0;
+
+  color: #f4f6fb;
+
+  font-size: 1.8rem;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+
+.profile-username {
+  margin-top: 5px;
+
+  color: #71819c;
+
+  font-size: 0.9rem;
+}
+
+
+.profile-bio {
+  margin: 8px 0 0 0;
+
+  color: #b2bdd0;
+
+  font-size: 0.95rem;
+
+  font-style: italic;
+}
+
+
+/* =========================
+   EDIT PROFILE
+========================= */
+
+.edit-profile-button {
+  padding: 10px 20px;
+
+  border: 1px solid #263750;
+  border-radius: 9px;
+
+  background: #0a1523;
+
+  color: #e9edf5;
+
+  font-family: inherit;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.edit-profile-button:hover {
+  background-color: #111f31;
+
+  border-color: #3a4d68;
+}
+
+
+/* =========================
+   PROFILE STATS
+========================= */
+
+.profile-stats {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  margin-bottom: 30px;
+}
+
+
+.profile-stat {
+  min-height: 65px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  position: relative;
+}
+
+
+.profile-stat:not(:last-child)::after {
+  content: '';
+
+  position: absolute;
+
+  right: 0;
+  top: 8px;
+
+  width: 1px;
+  height: 50px;
+
+  background-color: #17263a;
+}
+
+
+.profile-stat strong {
+  color: #f5f7ff;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+
+.profile-stat span {
+  color: #8797af;
+
+  font-size: 0.8rem;
+}
+
+
+/* =========================
+   TABS
+========================= */
+
+.profile-tabs {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid #17263a;
+
+  margin-bottom: 25px;
+}
+
+
+.profile-tab {
+  position: relative;
+
+  padding: 14px 25px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #77869f;
+
+  font-family: inherit;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+
+.profile-tab:hover {
+  color: white;
+}
+
+
+.profile-tab.active {
+  color: #8c7cff;
+}
+
+
+.profile-tab.active::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -1px;
+
+  height: 2px;
+
+  border-radius: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #695cff,
+      #8b7cff
+    );
+}
+
+
+/* =========================
+   PROFILE SECTIONS
+========================= */
+
+.profile-overview {
+  display: flex;
+  flex-direction: column;
+
+  gap: 28px;
+}
+
+
+.profile-section h2 {
+  margin: 0 0 14px 0;
+
+  color: #eff2f8;
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+/* =========================
+   FAVORITE FILMS
+========================= */
+
+.favorite-films {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(140px, 1fr));
+
+  gap: 18px;
+}
+
+
+.favorite-movie-card {
+  height: 140px;
+
+  overflow: hidden;
+
+  border-radius: 9px;
+
+  background-color: #101d2d;
+
+  border: 1px solid #16263a;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.favorite-movie-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #344665;
+}
+
+
+.favorite-movie-card img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================
+   RECENT ACTIVITY
+========================= */
+
+.recent-activity {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(140px, 1fr));
+
+  gap: 18px;
+}
+
+
+.activity-card {
+  overflow: hidden;
+
+  border-radius: 9px;
+
+  background-color: #0c1725;
+
+  border: 1px solid #16263a;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.activity-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #344665;
+}
+
+
+.activity-card img {
+  width: 100%;
+  height: 110px;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+.activity-info {
+  padding: 10px 12px;
+}
+
+
+.activity-info h3 {
+  margin: 0 0 6px 0;
+
+  overflow: hidden;
+
+  color: #e8edf5;
+
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.activity-info span {
+  color: #f2c94c;
+
+  font-size: 0.75rem;
+}
+
+
+/* =========================
+   EMPTY TABS
+========================= */
+
+.profile-empty-tab {
+  padding: 50px 0;
+
+  text-align: center;
+
+  color: #7d8da5;
+}
+
+
+.profile-empty-tab h2 {
+  margin-bottom: 8px;
+
+  color: white;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+  .favorite-films,
+  .recent-activity {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .profile {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .profile-stats {
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 20px;
+  }
+
+  .profile-stat::after {
+    display: none;
+  }
+
+}
