@@ -2,6 +2,7 @@ import Navbar from '../../components/Navbar/Navbar.jsx';
 import Searchbar from '../../components/Searchbar/Searchbar.jsx';
 import MovieGrid from '../../components/MovieGrid/MovieGrid.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
+import LoginButton from '../../components/LoginButton/LoginButton.jsx';
 import './Home.css';
 
 function Home() {
@@ -35,6 +36,7 @@ function Home() {
   return (
     <>
       <Navbar />
+      <LoginButton />
       <Searchbar />
 
       <main className="home">

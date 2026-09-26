@@ -22,14 +22,16 @@ function Navbar() {
     <nav className="navbar">
 
       <div className="navbar-logo-container">
-        <div className="navbar-symbol">
-          ◆
-        </div>
+  <img
+    src="/flicksy-favicon.png"
+    alt="Flicksy logo"
+    className="navbar-logo-image"
+  />
 
-        <h2 className="navbar-logo">
-          Flicksy
-        </h2>
-      </div>
+  <h2 className="navbar-logo">
+    Flicksy
+  </h2>
+  </div>
 
 
       <div className="navbar-main-menu">

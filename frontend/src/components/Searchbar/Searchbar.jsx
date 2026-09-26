@@ -8,8 +8,7 @@ function Searchbar() {
                 type="text"
                 placeholder="Search for movies, series..."
             />
-
-            <button><IconSearch stroke={2} /></button>
+            <button><IconSearch size={20} stroke={2} /></button>
         </div>
     );
 }
