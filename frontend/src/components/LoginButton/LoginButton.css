@@ -5,6 +5,7 @@
 
     display: flex;
     align-items: center;
+
     z-index: 1000;
 }
 
@@ -13,16 +14,32 @@
     align-items: center;
     gap: 8px;
     padding: 8px 14px;
-
     background: transparent;
     border: none;
     border-radius: 8px;
-
     cursor: pointer;
     color: white;
     font-size: 1.1rem;
+    transition: opacity 0.2s ease;
 }
 
-.login-button:hover {
+.login-button button:hover {
     opacity: 0.7;
+}
+
+/* Foto de perfil */
+.profile-image {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff33;
+}
+
+/* Username */
+.login-button span {
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 500;
 }
