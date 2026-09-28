@@ -1,26 +1,15 @@
 .profile {
   margin-left: 240px;
-
   min-height: 100vh;
 
-  padding:
-    95px
-    55px
-    60px
-    55px;
+  padding: 50px 55px 60px 55px;
 
   box-sizing: border-box;
 
-  background:
-    linear-gradient(
-      180deg,
-      #07111d 0%,
-      #08121f 100%
-    );
+  background: linear-gradient(180deg, #07111d 0%, #08121f 100%);
 
   color: white;
 }
-
 
 /* =========================
    PROFILE HEADER
@@ -39,14 +28,12 @@
   margin-bottom: 35px;
 }
 
-
 .profile-user {
   display: flex;
   align-items: center;
 
   gap: 25px;
 }
-
 
 .profile-avatar {
   width: 110px;
@@ -58,14 +45,8 @@
 
   border-radius: 50%;
 
-  background:
-    linear-gradient(
-      135deg,
-      #6d5dfc,
-      #2b3a91
-    );
+  background: linear-gradient(135deg, #6d5dfc, #2b3a91);
 }
-
 
 .profile-avatar img {
   width: 100%;
@@ -84,14 +65,12 @@
   box-sizing: border-box;
 }
 
-
 .profile-info {
   display: flex;
   flex-direction: column;
 
   align-items: flex-start;
 }
-
 
 .profile-info h1 {
   margin: 0;
@@ -104,7 +83,6 @@
   line-height: 1.2;
 }
 
-
 .profile-username {
   margin-top: 5px;
 
@@ -112,7 +90,6 @@
 
   font-size: 0.9rem;
 }
-
 
 .profile-bio {
   margin: 8px 0 0 0;
@@ -123,7 +100,6 @@
 
   font-style: italic;
 }
-
 
 /* =========================
    EDIT PROFILE
@@ -151,13 +127,11 @@
     border-color 0.2s ease;
 }
 
-
 .edit-profile-button:hover {
   background-color: #111f31;
 
   border-color: #3a4d68;
 }
-
 
 /* =========================
    PROFILE STATS
@@ -169,7 +143,6 @@
   grid-template-columns: repeat(5, 1fr);
   margin-bottom: 30px;
 }
-
 
 .profile-stat {
   min-height: 65px;
@@ -185,7 +158,6 @@
   position: relative;
 }
 
-
 .profile-stat:not(:last-child)::after {
   content: '';
 
@@ -200,7 +172,6 @@
   background-color: #17263a;
 }
 
-
 .profile-stat strong {
   color: #f5f7ff;
 
@@ -208,13 +179,11 @@
   font-weight: 700;
 }
 
-
 .profile-stat span {
   color: #8797af;
 
   font-size: 0.8rem;
 }
-
 
 /* =========================
    TABS
@@ -230,7 +199,6 @@
 
   margin-bottom: 25px;
 }
-
 
 .profile-tab {
   position: relative;
@@ -255,16 +223,13 @@
     background-color 0.2s ease;
 }
 
-
 .profile-tab:hover {
   color: white;
 }
 
-
 .profile-tab.active {
   color: #8c7cff;
 }
-
 
 .profile-tab.active::after {
   content: '';
@@ -279,14 +244,8 @@
 
   border-radius: 4px;
 
-  background:
-    linear-gradient(
-      90deg,
-      #695cff,
-      #8b7cff
-    );
+  background: linear-gradient(90deg, #695cff, #8b7cff);
 }
-
 
 /* =========================
    PROFILE SECTIONS
@@ -299,7 +258,6 @@
   gap: 28px;
 }
 
-
 .profile-section h2 {
   margin: 0 0 14px 0;
 
@@ -309,7 +267,6 @@
   font-weight: 600;
 }
 
-
 /* =========================
    FAVORITE FILMS
 ========================= */
@@ -317,12 +274,10 @@
 .favorite-films {
   display: grid;
 
-  grid-template-columns:
-    repeat(4, minmax(140px, 1fr));
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
 
   gap: 18px;
 }
-
 
 .favorite-movie-card {
   height: 140px;
@@ -340,13 +295,11 @@
     border-color 0.2s ease;
 }
 
-
 .favorite-movie-card:hover {
   transform: translateY(-3px);
 
   border-color: #344665;
 }
-
 
 .favorite-movie-card img {
   width: 100%;
@@ -357,7 +310,6 @@
   object-fit: cover;
 }
 
-
 /* =========================
    RECENT ACTIVITY
 ========================= */
@@ -365,12 +317,10 @@
 .recent-activity {
   display: grid;
 
-  grid-template-columns:
-    repeat(4, minmax(140px, 1fr));
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
 
   gap: 18px;
 }
-
 
 .activity-card {
   overflow: hidden;
@@ -386,13 +336,11 @@
     border-color 0.2s ease;
 }
 
-
 .activity-card:hover {
   transform: translateY(-3px);
 
   border-color: #344665;
 }
-
 
 .activity-card img {
   width: 100%;
@@ -403,11 +351,9 @@
   object-fit: cover;
 }
 
-
 .activity-info {
   padding: 10px 12px;
 }
-
 
 .activity-info h3 {
   margin: 0 0 6px 0;
@@ -423,13 +369,11 @@
   white-space: nowrap;
 }
 
-
 .activity-info span {
   color: #f2c94c;
 
   font-size: 0.75rem;
 }
-
 
 /* =========================
    EMPTY TABS
@@ -443,39 +387,31 @@
   color: #7d8da5;
 }
 
-
 .profile-empty-tab h2 {
   margin-bottom: 8px;
 
   color: white;
 }
 
-
 /* =========================
    RESPONSIVE
 ========================= */
 
 @media (max-width: 1000px) {
-
   .favorite-films,
   .recent-activity {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
-
 @media (max-width: 800px) {
-
   .profile {
     padding-left: 30px;
     padding-right: 30px;
   }
 
   .profile-stats {
-    grid-template-columns:
-      repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 20px;
   }
@@ -483,5 +419,4 @@
   .profile-stat::after {
     display: none;
   }
-
 }
