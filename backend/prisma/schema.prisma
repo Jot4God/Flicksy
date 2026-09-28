@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model UserProfile {
+  id          Int      @id @default(autoincrement())
+  firebaseUid String   @unique
+  email       String?
+  username    String   @unique
+  displayName String?
+  bio         String   @default("")
+  photoURL    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
