@@ -576,3 +576,76 @@ feat: add footer
 fix: correct navbar spacing
 docs: update README
 ```
+
+---
+
+# 🔐 Versão atual — Perfil persistente + Backend TypeScript
+
+O projeto inclui agora uma primeira API real em `backend/`.
+
+## Novidades
+
+- Backend Node.js + TypeScript + Express
+- Firebase Authentication continua responsável pelo login
+- O backend valida o Firebase ID token antes de alterar o perfil
+- Prisma ORM + SQLite para desenvolvimento local
+- Username, display name e bio ficam guardados na base de dados
+- Foto de perfil pode ser alterada no `Edit Profile`
+- Uploads locais ficam em `backend/uploads/`
+- `Profile.jsx` lê os dados reais da API
+
+## Arrancar esta versão
+
+### Backend
+
+```bash
+cd backend
+cp .env.example .env
+```
+
+Antes de arrancar, configura `GOOGLE_APPLICATION_CREDENTIALS` com o caminho para uma Service Account do teu projeto Firebase.
+
+Depois:
+
+```bash
+npm install
+npm run db:push
+npm run dev
+```
+
+O backend fica em:
+
+```text
+http://localhost:3000
+```
+
+### Frontend
+
+Noutro terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+O frontend usa por defeito:
+
+```text
+http://localhost:3000/api
+```
+
+Se quiseres mudar a API, cria `frontend/.env`:
+
+```env
+VITE_API_URL=http://localhost:3000/api
+```
+
+Para veres os perfis guardados na base de dados:
+
+```bash
+cd backend
+npm run db:studio
+```
+
+Consulta também `CHANGES_PROFILE_BACKEND.md` para uma explicação das alterações.

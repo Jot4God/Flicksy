@@ -13,6 +13,8 @@
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "^7.18.4",
-    "vite": "latest"
+    "vite": "latest",
+    "@tabler/icons-react": "^3.48.0",
+    "firebase": "^12.19.0"
   }
 }

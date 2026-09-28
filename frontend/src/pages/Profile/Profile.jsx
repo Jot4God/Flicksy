@@ -8,19 +8,33 @@ import { useEffect, useState } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../../firebase/firebase'
+import { getProfile } from '../../services/profileService'
 
 function Profile() {
   const [user, setUser] = useState(null)
   const [editOpen, setEditOpen] = useState(false)
   const [activeTab, setActiveTab] = useState('Overview')
+  const [profile, setProfile] = useState(null)
+  const [profileLoading, setProfileLoading] = useState(true)
 
   const navigate = useNavigate()
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         setUser(currentUser)
+
+        try {
+          const profileData = await getProfile()
+          setProfile(profileData)
+        } catch (error) {
+          console.error('Error loading profile:', error)
+        } finally {
+          setProfileLoading(false)
+        }
       } else {
+        setProfile(null)
+        setProfileLoading(false)
         navigate('/login')
       }
     })
@@ -28,8 +42,9 @@ function Profile() {
     return () => unsubscribe()
   }, [navigate])
 
-  const username =
-    user?.displayName?.toLowerCase().replace(/\s+/g, '') || 'user'
+  const username = profile?.username ||
+    user?.displayName?.toLowerCase().replace(/\s+/g, '') ||
+    'user'
 
   const favoriteMovies = [
     {
@@ -85,7 +100,13 @@ function Profile() {
     <>
       <Navbar />
       <LoginButton />
-      <EditProfileModal visible={editOpen} onClose={() => setEditOpen(false)} />
+      <EditProfileModal
+        user={user}
+        profile={profile}
+        visible={editOpen}
+        onClose={() => setEditOpen(false)}
+        onSaved={setProfile}
+      />
 
       <main className="profile">
         {/* PROFILE HEADER */}
@@ -93,17 +114,21 @@ function Profile() {
           <div className="profile-user">
             <div className="profile-avatar">
               <img
-                src={user?.photoURL || '/default-avatar.png'}
+                src={profile?.photoURL || user?.photoURL || '/default-avatar.svg'}
                 alt="Profile"
               />
             </div>
 
             <div className="profile-info">
-              <h1>{user?.displayName || 'User'}</h1>
+              <h1>{profile?.displayName || user?.displayName || 'User'}</h1>
 
               <span className="profile-username">@{username}</span>
 
-              <p className="profile-bio">Good movies, better moments.</p>
+              <p className="profile-bio">
+                {profileLoading
+                  ? 'Loading profile...'
+                  : profile?.bio || 'Add a bio to tell people about yourself.'}
+              </p>
             </div>
           </div>
 

@@ -115,3 +115,61 @@
 
   cursor: pointer;
 }
+.edit-profile-photo-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.edit-profile-photo-actions span {
+  color: #71819c;
+  font-size: 0.75rem;
+}
+
+.change-photo-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 14px;
+
+  border: 1px solid #33445e;
+  border-radius: 8px;
+
+  background: #101f31;
+  color: #edf1f8;
+
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.change-photo-button:hover {
+  background: #172a40;
+}
+
+.profile-photo-input {
+  display: none;
+}
+
+.bio-counter {
+  align-self: flex-end;
+  margin-top: -4px;
+  color: #71819c;
+  font-size: 0.75rem;
+}
+
+.edit-profile-error {
+  margin: 15px 0 0 0;
+  padding: 10px 12px;
+  border: 1px solid #7c3542;
+  border-radius: 8px;
+  background: rgba(130, 44, 60, 0.14);
+  color: #ffacb8;
+  font-size: 0.85rem;
+}
+
+.save-profile-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
