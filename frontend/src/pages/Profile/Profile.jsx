@@ -85,7 +85,6 @@ function Profile() {
     <>
       <Navbar />
       <LoginButton />
-      <Searchbar />
       <EditProfileModal visible={editOpen} onClose={() => setEditOpen(false)} />
 
       <main className="profile">
