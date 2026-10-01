@@ -1,0 +1,91 @@
+services:
+  # =========================
+  # DATABASE
+  # =========================
+  postgres:
+    image: postgres:16-alpine
+
+    container_name: flicksy-postgres
+
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: flicksy
+      POSTGRES_PASSWORD: flicksy_password
+      POSTGRES_DB: flicksy
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - flicksy_postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U flicksy -d flicksy"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # =========================
+  # BACKEND
+  # =========================
+  backend:
+    build:
+      context: ./backend
+
+    container_name: flicksy-backend
+
+    restart: unless-stopped
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    environment:
+      PORT: 3000
+
+      DATABASE_URL: postgresql://flicksy:flicksy_password@postgres:5432/flicksy
+
+      FIREBASE_PROJECT_ID: flicksy-db008
+
+      GOOGLE_APPLICATION_CREDENTIALS: /app/firebase/service-account.json
+
+      FRONTEND_ORIGIN: http://localhost:5173
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./firebase:/app/firebase:ro
+
+    command: sh -c "npx prisma db push && npm run dev"
+
+  # =========================
+  # FRONTEND
+  # =========================
+  frontend:
+    build:
+      context: ./frontend
+
+    container_name: flicksy-frontend
+
+    restart: unless-stopped
+
+    depends_on:
+      - backend
+
+    ports:
+      - "5173:5173"
+
+    environment:
+      VITE_API_URL: http://localhost:3000/api
+
+    command: npm run dev -- --host 0.0.0.0
+
+# =========================
+# VOLUMES
+# =========================
+
+volumes:
+  flicksy_postgres_data:
