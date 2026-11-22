@@ -37,19 +37,18 @@ services:
 
     restart: unless-stopped
 
+    env_file:
+      - ./backend/.env
+
     depends_on:
       postgres:
         condition: service_healthy
 
     environment:
       PORT: 3000
-
       DATABASE_URL: postgresql://flicksy:flicksy_password@postgres:5432/flicksy
-
       FIREBASE_PROJECT_ID: flicksy-db008
-
       GOOGLE_APPLICATION_CREDENTIALS: /app/firebase/service-account.json
-
       FRONTEND_ORIGIN: http://localhost:5173
 
     ports:
@@ -86,6 +85,5 @@ services:
 # =========================
 # VOLUMES
 # =========================
-
 volumes:
   flicksy_postgres_data:

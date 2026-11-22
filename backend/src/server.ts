@@ -3,6 +3,7 @@ import cors from "cors";
 import express from "express";
 import path from "node:path";
 import profileRoutes from "./routes/profile.routes.js";
+import movieRoutes from "./routes/movie.routes.js";
 import { initializeFirebaseAdmin } from "./lib/firebaseAdmin.js";
 import fs from "fs";
 
@@ -33,6 +34,7 @@ app.get("/api/health", (_req, res) => {
 });
 
 app.use("/api/profile", profileRoutes);
+app.use("/api/movies", movieRoutes);
 
 app.use(
   (

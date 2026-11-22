@@ -1,5 +1,5 @@
-import MovieCard from '../MovieCard/MovieCard.jsx';
-import './MovieGrid.css';
+import MovieCard from '../MovieCard/MovieCard.jsx'
+import './MovieGrid.css'
 
 function MovieGrid({ movies }) {
   return (
@@ -10,10 +10,11 @@ function MovieGrid({ movies }) {
           title={movie.title}
           year={movie.year}
           rating={movie.rating}
+          posterPath={movie.poster_path}
         />
       ))}
     </div>
-  );
+  )
 }
 
-export default MovieGrid;
+export default MovieGrid
